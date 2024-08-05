@@ -22,7 +22,8 @@ const handleAdvance = async (data: AdvanceRequestData): Promise<RequestHandlerRe
       await voteController.castVote({
         voter: data.metadata.msg_sender,
         candidate: payload.params.candidate,
-        timestamp: data.metadata.timestamp
+        timestamp: data.metadata.timestamp,
+        electionName: payload.params.electionName
       });
       return "accept";
     case "createElection":
